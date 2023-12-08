@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>ToDo Application</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <br>
+    <form action="/addItems" method="post">
+        <label>ADD Here:</label>
+        <div class="ui segement">
+            <br>
+                <div class="enteredItems">
+                <input type="text" name="title" placeholder="Enter Items">
+                <button type="submit">Add</button>
+                </div>
+            <br>
+            <br>
+        </div>
+    </form>
+
+<div id="editTable">
+    <table border="1">
+            {% for todo in todoList %}
+            <tr>
+                <th id="editItems"><h3>{{ todo.id }}</h3>{{ todo.item }}</th>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+<br>
+
+<form action="/remove" method="post">
+    <input type="text" name="del" placeholder="Remove #">
+    <br>
+    <button type="submit">Delete</button>
+    {% include 'footer.html' %}
+</form>
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+.enteredItems{
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+button{
+  color: aliceblue;
+  background-color:darkblue;
+  border-radius: 25px;
+}
+
+body{
+  align-content: center;
+}
+
+p{
+  font-family: fantasy;
+}
+
+label{
+  font-family: fantasy;
+}
